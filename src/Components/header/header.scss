@@ -1,0 +1,118 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: white;
+  -webkit-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  -moz-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  .leftSide {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    ul {
+      display: flex;
+      gap: 20px;
+      li {
+        list-style: none;
+        a {
+          transition: all 0.4s;
+          text-decoration: none;
+          color: #a6a6a6;
+          font-size: 20px;
+          &:hover {
+            color: black;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+          }
+        }
+        .active {
+          color: black;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+      }
+    }
+  }
+  .rightSide {
+    select {
+      padding: 5px 10px;
+      outline: none;
+      cursor: pointer;
+    }
+    svg {
+      display: none;
+    }
+  }
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  header {
+    .leftSide {
+      ul {
+        display: none;
+      }
+    }
+    .rightSide {
+      display: flex;
+      gap: 20px;
+      svg {
+        display: block;
+      }
+    }
+    .mobile-menu {
+      display: flex;
+      background-color: white;
+      justify-content: center;
+      align-items: center;
+      .cancel-icon {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+      }
+      ul {
+        li {
+          list-style: none;
+          padding: 10px 0;
+          a {
+            transition: all 0.4s;
+            text-decoration: none;
+            color: #a6a6a6;
+            font-size: 20px;
+            &:hover {
+              color: black;
+              text-decoration: underline;
+              text-underline-offset: 4px;
+            }
+          }
+          .active {
+            color: black;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  header {
+    .leftSide {
+      img {
+        width: 150px;
+      }
+    }
+  }
+}
