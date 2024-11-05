@@ -1,11 +1,10 @@
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2%;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   padding: 30px 0;
   .productItem {
     margin-top: 20px;
-    width: 18.4%;
     transition: all 0.4s;
     overflow: hidden;
     cursor: pointer;
@@ -34,17 +33,11 @@
 
 @media only screen and (max-width: 800px) {
   .products {
-    gap: 5%;
-    .productItem {
-      width: 30%;
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media only screen and (max-width: 600px) {
   .products {
-    gap: 6%;
-    .productItem {
-      width: 47%;
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
 }

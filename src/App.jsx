@@ -16,6 +16,7 @@ import Contact from "./pages/contactPage/Contact";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import AOS from "aos";
 import { useEffect } from "react";
+import ProductOne from "./Components/productOne/ProductOne";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
+        <Route path="product/:id" element={<ProductOne />} />
         <Route path="collection" element={<Collection />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />

@@ -1,0 +1,26 @@
+.productItem {
+  margin-top: 20px;
+  transition: all 0.4s;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.4s;
+  }
+  p {
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+    p {
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: rgb(228, 15, 15);
+    }
+  }
+}

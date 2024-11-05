@@ -3,9 +3,16 @@ import BurgerMenu from "../../icons/BurgerMenu";
 import CancelIcon from "../../icons/CancelIcon";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [mobile, setMobile] = useState(false);
+  const { t, i18n } = useTranslation();
+  const lang = localStorage.getItem("lang");
+
+  const changeLang = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
   return (
     <header>
       <div className="leftSide">
@@ -17,21 +24,21 @@ const Header = () => {
 
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">{t("home")}</NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">{t("about")}</NavLink>
           </li>
           <li>
-            <NavLink to="/collection">Collection</NavLink>
+            <NavLink to="/collection">{t("collection")}</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact">{t("contact")}</NavLink>
           </li>
         </ul>
       </div>
       <div className="rightSide">
-        <select>
+        <select onChange={changeLang} select={lang}>
           <option value="uz">UZ</option>
           <option value="ru">RU</option>
           <option value="en">EN</option>

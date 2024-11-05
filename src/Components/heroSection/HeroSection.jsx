@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import "./heroSection.scss";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="heroSection">
       <img
@@ -9,7 +11,7 @@ const HeroSection = () => {
         alt="Hero Img"
       />
       <div>
-        <p data-aos="flip-left">Buxoro</p> <br />
+        <p data-aos="flip-left">{t("country")}</p> <br />
         <p data-aos="flip-left">Tabiiy</p> <br />
         <p data-aos="flip-left">MAHSULOTI</p>
       </div>

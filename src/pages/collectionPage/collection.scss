@@ -1,0 +1,79 @@
+.collectionPage {
+  padding: 50px 0;
+  .collectionBox {
+    display: flex;
+    gap: 2%;
+    .left-side {
+      width: 20%;
+      .search {
+        background-color: #e5dddd;
+        border-radius: 20px;
+        padding: 15px 25px;
+        input {
+          width: 100%;
+          font-size: 16px;
+          border: none;
+          outline: none;
+          background-color: transparent;
+        }
+      }
+      .category {
+        margin-top: 40px;
+        h1 {
+          margin-bottom: 50px;
+        }
+        ul {
+          li {
+            list-style: none;
+            margin-bottom: 20px;
+            a {
+              text-decoration: none;
+              color: black;
+              cursor: pointer;
+              &:hover {
+                color: red;
+              }
+              &.active {
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right-side {
+      width: 78%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .collectionPage {
+    .collectionBox {
+      flex-direction: column;
+      .left-side {
+        width: 100%;
+      }
+      .right-side {
+        width: 100%;
+
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .collectionPage {
+    .collectionBox {
+      .right-side {
+        width: 100%;
+
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
